@@ -1,0 +1,31 @@
+{
+    "name" : "Page Redder",
+    "manifest_version" : 3,
+    "version" : "0.150",
+    "author": "Rifatul Karim",
+    "description" : "My Youtube Chrome Extension Project",
+    "content_scripts": [
+        {
+            "matches": ["https://www.youtube.com/*"],
+            "css": ["my-styles.css"],
+            "js": ["contentScript.js"]
+        }
+    ],
+    "permissions" : [
+        "activeTab",
+        "scripting",
+        "storage",
+        "tabs"
+    ],
+    "host_permissions": [
+        "https://*/*",
+        "http://*/*"
+    ],
+    "background" : {
+        "service_worker" : "background.js"
+    },
+    "action": {
+        "default_title": "MyYoutubeList",
+        "default_popup": "popup.html"
+    }
+}
